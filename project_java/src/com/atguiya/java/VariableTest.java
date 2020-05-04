@@ -3,12 +3,75 @@ package com.atguiya.java;
 import java.util.Scanner;
 
 public class VariableTest {
-    public static void main(String args[]){
-        for (int i=0;i<100;i++){
-            if(i%10==0)
-                continue;
-            System.out.println(i);
+    public static void main(String[] args){
+        int[][] arr = new int[][]{{3,5,8},{12,9}, {7,0,6,4}};
+        int sum =0;
+        for (int i=0;i<arr.length;i++){
+            for (int j=0;j<arr[i].length;j++){
+                sum += arr[i][j];
+            }
         }
+        System.out.println(sum);
+    }
+//    public static void main(String[] args) {
+//        int[] arr = new int[]{1, 2, 3};
+//        // 静态初始化
+//        int[][] arr1 = new int[][]{{1, 2, 3}, {4, 5}, {6,7,8}};
+//        //动态初始化
+//        String[][] arr2 = new String[3][2];
+//        String[][] arr3 = new String[3][];
+//        System.out.println(arr1[1]);
+//    }
+//    public static void main(String[] args){
+//        int[] ids;
+//        // 1.静态初始化：数组的初始化和数组元素的赋值操作同时进行
+//        ids = new int[]{1001,1002,1003,1004};
+//        // 2.动态初始化：数组的初始化和数组元素的赋值操作分开进行
+//        String[] names = new String[5];
+//        System.out.println(ids.length);
+//        for(int i=0;i<ids.length;i++){
+//            System.out.println(ids[i]);
+//        }
+//        int[] intArray1 = {1,2,3};
+//        int[] intArray2 = new int []{1, 2, 3};
+//        int[] intArray3 = new int[3];
+//        {
+//            intArray3[0] = 1;
+//            intArray3[1] = 2;
+//            intArray3[2] = 3;
+////            intArray3[3] = 4;
+////            Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 3
+//        }
+//
+//        char[] arr = new char[4];
+//        for(int i=0;i<arr.length;i++){
+//            System.out.println(arr[i]);
+//        }
+//
+//    }
+
+//    public static  void main(String[] args){
+//        double d1 =12.9;
+//        int i1 = (int)d1;
+//        System.out.println(i1);//12
+//
+//        long l1 =123;
+//        short s2 = (short)l1;//
+//        System.out.println(s2);//123
+//
+//        int i2 =128;
+//        byte b= (byte)i2;
+//        System.out.println(b);//-128
+//
+//        float s1 = 12.3f;
+//        double a2 = 12.3;
+//    }
+//    public static void main(String args[]){
+//        for (int i=0;i<100;i++){
+//            if(i%10==0)
+//                continue;
+//            System.out.println(i);
+//        }
 
 //    public static void main(String[] args){
 //        for (int i=0;i<10;i++){
@@ -23,7 +86,7 @@ public class VariableTest {
         i=2
         Game over!
         */
-    }
+//    }
 //    public static void main(String[] args){
 //        Scanner scanner = new Scanner(System.in);
 //        int positeNumber=0;
