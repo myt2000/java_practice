@@ -46,7 +46,7 @@ package com.oopTest;
 
 /*
 * 构造器（constructor）
-* 
+*
 *
 * */
 
