@@ -44,6 +44,13 @@ package com.oopTest;
 * */
 
 
+/*
+* 构造器（constructor）
+* 
+*
+* */
+
+
 
 public class PersonTest {
     public static void main(String[] args){
