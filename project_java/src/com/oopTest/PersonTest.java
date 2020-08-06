@@ -1,3 +1,4 @@
+
 package com.oopTest;
 /*
 * 属性 = 成员变量 = field = 域、字段
@@ -46,46 +47,98 @@ package com.oopTest;
 
 /*
 * 构造器（constructor）
+* Construct:建设、构造
+* 构造器就是方法与类同名的定义一个方法，这样就是个构造器，实例化类的时候可以给类传参
+* 一、构造器的作用
+* 1.创建对象
+* 2.初始化对象的信息
 *
+*
+* 二、说明：
+* 1.如果没有显示的定义类的构造器的话，则系统默认提供一个空参数的构造器
+* 2.定义构造器的格式：权限修饰符 类名（形参列表）{}
+* 3.一个类中定义的多个构造器，彼此构成重载
+* 4.一旦我们显示的定义了累的构造器之后，系统就不在提供默认的空参构造器
+* 5.一个类中，至少会有一个构造器
 *
 * */
+
+
+/*
+* this关键字使用
+* 1.this可以用来修饰：属性、方法、构造器
+*
+* 2.this修饰属性和方法
+*   this理解为当前对象
+*
+* 3.this修饰调用构造器
+*   1.我们在类的构造器中，可以显式的使用"this(形参列表)"方式，调用本类中指定的其他构造器
+*   2.构造器中不能通过"this(形参列表)"方式调用自己
+*   3.如果一个类中有n个构造器，则最多有n-1构造器中使用"this(形参列表)"
+*   4.规定："this（形参列表）"必须声明在当前构造器的首行
+*   5.构造器内部，最多只能声明一个"this(形参列表)"，用来调用其他的构造器
+* */
+
+
 
 
 
 public class PersonTest {
     public static void main(String[] args){
         //创建Person类的对象
-        Person p1 = new Person();
+
+        // 一旦我们显示的定义了累的构造器之后，系统就不在提供默认的空参构造器
+//        Person p1 = new Person();
+
+        Person p1 = new Person("Tom");
         //调用对象的结构、属性、方法
         //调用属性：“对象、属性”
-        p1.name = "Jack";
+//        p1.name = "Jack";
         p1.isMale = false;
-        System.out.println(p1.name);
+//        System.out.println(p1.name);
         // 调用方法
         p1.eat();
         p1.sleep();
         p1.talk("Chinese");
 
-        Person p2 = new Person();
-        p2.name = "Henry";
-        System.out.println(p1.name);
+        Person p2 = new Person("Henry");
+//        p2.name = "Henry";
+//        System.out.println(p1.name);
 
         Person p3 = p1;
-        p3.age = 10;
-        System.out.println("年龄"+p1.age);
+//        p3.age = 10;
+//        System.out.println("年龄"+p1.age);
 
-        User u1 = new User();
-        u1.talk("日语");
-        u1.eat();
+//        User u1 = new User();
+//        u1.talk("日语");
+//        u1.eat();
 
     }
 
 }
 
 class Person{
-    String name;
-    int age =1;
+    private String name;
+    private int age =1;
     boolean isMale;
+
+    public Person(String n){
+        name = n;
+    }
+
+    public Person(String n, int a){
+        name = n;
+        age = a;
+
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+    public String getName(){
+        return name;
+    }
+
 
     public void eat(){
         System.out.println("人可以吃饭");
@@ -101,20 +154,20 @@ class Person{
 
 
 
-class User{
-    //属性（或成员变量）
-    String name;
-    public int age;
-    boolean isMale;
-
-    public void talk(String language){
-        System.out.println("我们使用"+ language+ "进行交流");
-    }
-
-    public void eat(){
-        String food="苹果";
-        System.out.println("我们喜欢" + food);
-    }
-}
+//class User{
+//    //属性（或成员变量）
+//    String name;
+//    public int age;
+//    boolean isMale;
+//
+//    public void talk(String language){
+//        System.out.println("我们使用"+ language+ "进行交流");
+//    }
+//
+//    public void eat(){
+//        String food="苹果";
+//        System.out.println("我们喜欢" + food);
+//    }
+//}
 
 
